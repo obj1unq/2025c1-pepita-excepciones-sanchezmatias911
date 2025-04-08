@@ -5,7 +5,10 @@ object pepita {
 		energia = energia + comida.energiaQueAporta()
 	}
 	
-	method validadVolar
+	method energiaNecesariaParaVolar()
+	method validadVolar(){
+
+	}
 	method volar(distancia) {
 		self.validarVolar()
 		energia = energia - 10 - distancia
