@@ -5,7 +5,9 @@ object pepita {
 		energia = energia + comida.energiaQueAporta()
 	}
 	
+	method validadVolar
 	method volar(distancia) {
+		self.validarVolar()
 		energia = energia - 10 - distancia
 	}
 		
@@ -13,6 +15,7 @@ object pepita {
 		return energia
 	}
 }
+//mensaje para testear
 
 object alpiste {
 	method energiaQueAporta() {
@@ -50,7 +53,7 @@ object pepon {
 	}
 		
 	method comer(comida) {
-		energia += energia + comida.energiaQueAporta() / 2
+		energia = energia + comida.energiaQueAporta() / 2
 	}
 		
 	method volar(distancia) {
