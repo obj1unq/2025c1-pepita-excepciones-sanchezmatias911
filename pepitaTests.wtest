@@ -17,5 +17,5 @@ describe "Pepita"{
             pepita.comer(alpiste)
             assert.equals(90, pepita.energia())
           }
-    test "prueba de excepciones de pepon"
+    
 }

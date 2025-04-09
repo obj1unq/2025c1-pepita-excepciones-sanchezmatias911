@@ -9,7 +9,7 @@ object pepita {
 	method energiaNecesariaParaVolar(distancia){
 		return distancia + 10
 	}
-	method validadVolar(distancia){
+	method validarVolar(distancia){
 		if(!(energia>= self.energiaNecesariaParaVolar(distancia))){
 			self.error(" soy pepita y no puedo volar")
 		}
@@ -55,7 +55,7 @@ object manzana {
 
 object pepon {
 	var energia = 30
-	var ultimaComida
+	var ultimaComida = manzana
 
 	method energia() {
 		return energia
@@ -81,7 +81,7 @@ object pepon {
 	method energiaNecesariaParaVolar(distancia){
 		return 20 + 2*distancia
 	}
-	method validadVolar(distancia){
+	method validarVolar(distancia){
 		if(!(energia>= self.energiaNecesariaParaVolar(distancia))){
 			self.error("sor pepon y no puedo volar")
 		}
@@ -102,5 +102,30 @@ object roque {
 		ave.comer(alimento)
 		cenas = cenas + 1
 	}
+
+	/*
+		En el caso de las cenas, si el ave de roque no puede comer, no se ejecuta el codigo siguiente 
+		que aumentaria el numero de cenas y no es necesario modificar	
+	*/
+}
+
+object milena{ // solucion basica. Cambiar cuando se den colecciones en la materia
+
+	const ave1 = pepita
+	const ave2 = pepon
+
+	method movilizar(distancia){
+		self.validarVuelo(ave1,distancia)
+		self.validarVuelo(ave2,distancia)
+		//rompe si una no puede volar
+		ave1.volar(distancia)
+		ave2.volar(distancia)
+
+	}
+
+	method validarVuelo(ave,distancia){ //me rompe si una no puede volar
+		 ave.validarVolar(distancia)
+	}
+
 }
 
